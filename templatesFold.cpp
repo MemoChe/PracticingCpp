@@ -1,5 +1,7 @@
 #include <iostream>
 #include <ostream>
+#include <tuple>
+#include <vector>
 
 
 template <typename... Args>
@@ -46,6 +48,25 @@ auto AverageOfNumbers (Args... args){
   return 0 + u;
 }
 
+template <typename... Args>
+void TryingSomethingNew (Args... args){
+ // ( (for(int i =0 ; i < 7 ; i++) {args + i} ),...);
+}
+ 
+template <typename... Types>
+auto SumOfElements ( std::tuple<Types...> t){
+  return std::apply(
+    [] (auto&... e){ 
+      return (e+...);
+    }
+    ,t);
+}
+
+void printElement (auto... elements){
+  ((std::cout << elements << " "), ...);
+  std::cout << std::endl;
+}
+
 
 int main (int argc, char *argv[]) {
   printElements(1,2,3);
@@ -63,6 +84,13 @@ int main (int argc, char *argv[]) {
   }
   NumberOfArguments(1,2,"string",1.2);
   std::cout << "The average of 1,2,3,4,5 is: " << AverageOfNumbers(1,2,3,4,5) << std::endl;
+  std::vector<int> lista {1,2,3,4};
+  std::cout << std::endl;
+  //how lambda work in the args
+  ([](int num) { std::cout << num << " ";})(2);
+  auto f = [](int num) -> int { return num * 2; }(5);
+  std::cout << std::endl;
+  printElement(1, "hello", 1.2);
 
   return 0;
 }
