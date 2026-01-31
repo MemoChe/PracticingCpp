@@ -28,6 +28,7 @@ int main (int argc, char *argv[]) {
   lista.erase(lista.begin());// Remove the first element 
   print(lista);
   lista.erase(lista.begin()+1); // Remove the element from position 1
+  //lista.erase (lista.begin(),lista.begin ()+2); // Removes elements from position 0 to position 1, remenber is exclusice function like [>
   print(lista);
   // ACCESS
   int v1 = lista[0];
@@ -106,8 +107,14 @@ int main (int argc, char *argv[]) {
     std::cout << &lista[i] << " ";
   }
   std::cout << std::endl;
-
- 
+  std::cout << "---------------------"<<std::endl;
+  lista2.emplace_back(3);
+  print(lista2);
+  for (auto iterator = lista2.rbegin() ; iterator != lista2.rend() ; iterator++) {
+    std::cout << *iterator <<  " " ;
+  }
+  std::cout << std::endl;
+  std::cout << &lista2[0] << " " << lista2.data() <<std::endl; // its the same memory location
 
   return 0;
 }
