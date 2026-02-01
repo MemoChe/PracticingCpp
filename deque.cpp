@@ -1,5 +1,6 @@
 #include <deque>
 #include <iostream>
+#include <vector>
 
 
 template <typename T>
@@ -13,6 +14,7 @@ void print (const T& container){
 int main (int argc, char *argv[]) {
   std::deque <int> cola {1,2,3,4,5};
   std::deque <int> cola2;
+  //std::deque <int> cola3 ({1,2,3});
   cola2.assign({9,9,9,9,8});
   cola.swap(cola2); // Swap between two deques
   print(cola);
