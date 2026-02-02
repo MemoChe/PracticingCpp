@@ -37,6 +37,27 @@ int main (int argc, char *argv[]) {
     cola.pop();
   }
   std::cout << std::endl;
-  //cola.push_range();
+  std::vector<int>l {1,2,3,4,5};
+  cola.push_range(l);
+  while (!cola.empty()){
+    std::cout << cola.front() << " ";
+    cola.pop();
+  }
+  bool vacio = cola.empty();
+  std::cout << std::endl;
+  std::cout << vacio << std::endl;
+  cola.swap(cola3);
+  std::cout << "--------------------"<< std::endl;
+  while (!cola.empty()){
+    std::cout << cola.front() << " ";
+    cola.pop();
+  }
+  std::cout << std::endl;
+  while (!cola3.empty()){
+    std::cout << cola3.front() << " ";
+    cola3.pop();
+  }
+  std::cout << std::endl;
+
   return 0;
 }
