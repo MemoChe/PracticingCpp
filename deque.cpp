@@ -1,5 +1,6 @@
 #include <deque>
 #include <iostream>
+#include <iterator>
 #include <vector>
 
 
@@ -43,6 +44,8 @@ int main (int argc, char *argv[]) {
   int e2 = cola2.at(0); //element at position 0
   int e3 = cola2.front(); // first element
   int e4 = cola2.back(); // last element
+  // cola2.front () = 1; // it work because they give us an reference to the element
+  // cola2.back () = 2; 
   std::cout << e1 << " " << e2 << " " << e3 << " " <<  e4 << std::endl;
   std::cout << "------------------------"<< std::endl;
   cola2.erase(cola2.end()-1);
@@ -52,5 +55,10 @@ int main (int argc, char *argv[]) {
   //cola2.resize(2);
   std::cout << cola2.size() << std::endl; 
   //cola2.clear(); // Eliminates all the elements
+  std::cout << cola2.max_size() << std::endl; // size is different that max_size
+  std::vector <int> rango {1,2,3};
+  cola2.append_range(rango);
+  cola2.insert_range(cola2.begin(), rango);
+  print(cola2);
   return 0;
 }
