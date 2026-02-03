@@ -17,6 +17,10 @@ void print (T & container) {
 
 int main (int argc, char *argv[]) {
   std::vector <int> lista {1,2,3};
+  //std::vector<int> lista3({1,2,3});
+  //std::vector<int>lista4(5,3);//initialize the vector with thwe value 3
+  //print(lista3);
+  //print(lista4);
   //ADD ELEMENTS
   lista.push_back(4); // Add an element at the end
   lista.push_back(5); // Add an element at the end efficiently

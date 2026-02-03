@@ -109,6 +109,15 @@ int main (int argc, char *argv[]) {
   print(l1); //1 2 3 4 5 6 1 6 2 6 4
   l1.unique(); // {1 1 2 2 3 4 4 5 6 6 6}
   print(l1); // Now we have {1,2,3,4,5,6};
+  l1.reverse();
+  print(l1);
+  l1.assign(3,7);
+  print(l1);
+  l1.assign({1,2,3,4,5,6});
+  print(l1);
+  std::cout<< l1.size()<<std::endl;
+
+
 
 
 
