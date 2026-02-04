@@ -1,3 +1,4 @@
+#include <forward_list>
 #include <iostream>
 
 using namespace std;
@@ -9,5 +10,6 @@ int main (int argc, char *argv[]) {
   int & num = num2;
   num = num3;
   cout << num << endl;
+  forward_list<int> l;
   return 0;
 }
