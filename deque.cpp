@@ -56,9 +56,17 @@ int main (int argc, char *argv[]) {
   std::cout << cola2.size() << std::endl; 
   //cola2.clear(); // Eliminates all the elements
   std::cout << cola2.max_size() << std::endl; // size is different that max_size
+  cola2.assign({1,2,3});
   std::vector <int> rango {1,2,3};
+  print(cola2);
   cola2.append_range(rango);
+  print(cola2);
   cola2.insert_range(cola2.begin(), rango);
   print(cola2);
+  cola2.assign_range(rango);
+  print(cola2);
+  cola2.prepend_range(rango);
+  print(cola2);
+  
   return 0;
 }

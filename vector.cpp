@@ -2,6 +2,7 @@
 #include <cstddef>
 #include <initializer_list>
 #include <iterator>
+#include <list>
 #include <vector>
 #include <iostream>
 
@@ -47,6 +48,14 @@ int main (int argc, char *argv[]) {
   lista.erase(lista.begin());
   print(lista);
   lista.erase(lista.begin()+1);
+  print(lista);
+  lista.insert(lista.end(),{4,5,6});//initializer_list
+  print(lista);
+  std::vector <int> lista4 {7,8,9};//Dont work put a vector or a list
+  lista.insert(lista.end(),lista4.begin(),lista4.end());//only with iterators 
+  print(lista);
+  std::vector <int> lista5 {10,11,12};//Dont work put a vector or a list
+  lista.insert_range(lista.end(), lista5);//this work
   print(lista);
   // ACCESS
   int v1 = lista[0];
@@ -133,6 +142,26 @@ int main (int argc, char *argv[]) {
   print(lista3);
   lista3.assign(lista.begin(),lista.end());// {3,3,3,3,3} ->  {1,2,3}
   print(lista3);
-
+  std::list<int>l {1,2,3};
+  std::list<int>l2 {4,5,6};
+  lista3.assign_range(l);
+  std::cout << "---------------------"<<std::endl;
+  std::cout << "Assign_range only c++23"<<std::endl;
+  lista3.append_range(l2);//append a container vector list ...
+  print(lista3);
+  std::cout << "---------------------"<<std::endl;
+  std::cout << "Swap method"<<std::endl;
+  lista.assign({1,2,3});
+  std::cout << "Lista 1: ";
+  print(lista);
+  lista2.assign({4,5,6});
+  std::cout << "Lista 2: ";
+  print(lista2);
+  std::cout << "After swap\n";
+  lista.swap(lista2);
+  std::cout << "Lista 1: ";
+  print(lista);
+  std::cout << "Lista 2: ";
+  print(lista2);
   return 0;
 }
