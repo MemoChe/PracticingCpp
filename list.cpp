@@ -116,7 +116,9 @@ int main (int argc, char *argv[]) {
   l1.assign({1,2,3,4,5,6});
   print(l1);
   std::cout<< l1.size()<<std::endl;
-
+  l1.insert_range(l1.begin(),l2); //CONTAINERS LIKE VECTOR LIST ARRAY INT[5]
+  l1.insert(l1.begin(), {1,2,3}); // RANGES VS INITIALIZER_LIST vector list array // {1,2,3
+ 
 
 
 

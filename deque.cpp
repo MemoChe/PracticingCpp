@@ -13,8 +13,13 @@ void print (const T& container){
 }
 
 int main (int argc, char *argv[]) {
+  //DECLARATION AND CONSTRUCTOR
   std::deque <int> cola {1,2,3,4,5};
   std::deque <int> cola2;
+  std::deque <int> a (5); // Elements initialized to 0
+  std::deque <int> b (5,100); //Five elementes initialized to 100
+  std::deque <int> c (cola.begin(), cola.end()); 
+  std::deque <int> d (cola);
   //std::deque <int> cola3 ({1,2,3});
   cola2.assign({9,9,9,9,8});
   cola.swap(cola2); // Swap between two deques
@@ -67,6 +72,14 @@ int main (int argc, char *argv[]) {
   print(cola2);
   cola2.prepend_range(rango);
   print(cola2);
-  
+  cola2.assign({1,2,3});
+  print(cola2);
+  auto iteratorc = cola2.begin();
+  cola2.insert(cola2.end(),4);
+  cola2.insert(cola2.end(),{5,6});
+  cola2.insert(cola2.end(),2,7);
+  cola2.pop_back();
+  print(cola2);
   return 0;
+
 }

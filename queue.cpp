@@ -7,7 +7,7 @@
 
 int main (int argc, char *argv[]) {
   std::vector <int> lista {1,2,3,4,5,6};
-  std::queue<int> cola; // A queue don't accept initializer_list only with push method
+  std::queue<int> cola ; // A queue don't accept initializer_list only with push method
   // that is, std::queue<int> queue {1,2,3,4,5,6}
   // Only we can add an container to a queue
   // Only if we have another queue list ({1,2,3})
