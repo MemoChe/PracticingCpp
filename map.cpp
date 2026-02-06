@@ -1,3 +1,4 @@
+#include <iterator>
 #include <map>
 #include <string>
 #include <utility>
@@ -58,6 +59,19 @@ int main (int argc, char *argv[]) {
   std::cout << count << std::endl;
   count = d2.erase("asdasdasd"); // return 0 
   std::cout << count << std::endl;
+  for (const auto & [key,value] : d2) {
+    std::cout << key << ": " << value << " | ";
+  }
+  std::cout << std::endl;
+  auto it5 = d2.erase(d2.begin());
+  it5 = d2.erase(d2.begin(),std::next(d2.begin(),1)); //it is like [a,c)
+  for (const auto & [key,value] : d2) {
+    std::cout << key << ": " << value << " | ";
+  }
+  std::cout << std::endl;
+  //d2.clear() Elimintes all the elements  of the map
+
+
 
 
 
